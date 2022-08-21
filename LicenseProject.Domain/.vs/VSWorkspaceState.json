@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\LicenseProject.Api",
+    "\\LicenseProject.Api\\Controllers",
+    "\\LicenseProject.Api\\ViewModels",
+    "\\LicenseProject.Domain",
+    "\\LicenseProject.Domain\\Models",
+    "\\LicenseProject.Infrastructure",
+    "\\LicenseProject.Infrastructure\\AutoMappersProfiles",
+    "\\LicenseProject.Infrastructure\\Interfaces",
+    "\\LicenseProject.Infrastructure\\Migrations"
+  ],
+  "PreviewInSolutionExplorer": false
+}
