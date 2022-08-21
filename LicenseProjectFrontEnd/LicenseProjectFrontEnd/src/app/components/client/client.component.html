@@ -1,0 +1,48 @@
+<div class="body">
+    <!-- BTN to open modal -->
+<button type="button" class="btn btn-primary" (click)="openModal()">Add Client</button>
+
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Client</h4>
+                    <!-- <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button> -->
+                </div>
+            <div class="modal-body">
+                <div>
+                    Name:
+                    <input [(ngModel)]="clientName" placeholder="Name" />
+                </div>
+                <br/>
+                <div>
+                    Email:
+                    <input [(ngModel)]="clientEmail" placeholder="Email" />
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addClient()">Add Client</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let clientItem of clientList">
+            <td>{{clientItem.name}}</td>
+            <td>{{clientItem.email}}</td>
+            <td>
+                <button [ngStyle]="{float:'right'}" type="button" class="btn btn-secondary" (click)="deleteClient(clientItem)" >Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

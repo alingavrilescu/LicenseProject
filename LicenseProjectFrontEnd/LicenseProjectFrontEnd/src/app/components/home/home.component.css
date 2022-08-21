@@ -1,0 +1,13 @@
+.icons{
+    font-size: 125px;
+}
+
+.object{
+    display: absolute;
+    justify-content: center;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}

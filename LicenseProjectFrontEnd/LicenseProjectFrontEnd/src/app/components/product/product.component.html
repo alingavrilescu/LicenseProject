@@ -1,0 +1,54 @@
+<div class="body">
+        <!-- BTN to open modal -->
+<button type="button" class="btn btn-primary" (click)="openModal()">Add Product</button>
+
+<div class="modal" tabindex="-1" role="dialog"  [ngStyle]="{'display':display}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Product</h4>
+                    <!-- <button type="button" class="close" aria-label="Close" (click)="onCloseHandled()"><span aria-hidden="true">&times;</span></button> -->
+                </div>
+            <div class="modal-body">
+                <div>
+                    Name:
+                    <input [(ngModel)]="productName" placeholder="Name" />
+                </div>
+                <br/>
+                <div>
+                    Description:
+                    <input [(ngModel)]="productDescription" placeholder="Description" />
+                </div>
+                <br/>
+                <div>
+                    PassPhase:
+                    <input [(ngModel)]="productPassPhase" placeholder="PassPhase" />
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" (click)="onCloseHandled()" >Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addProduct()">Add Product</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let productItem of productList">
+                <td>{{productItem.name}}</td>
+                <td>{{productItem.description}}</td>
+                <td>
+                    <button [ngStyle]="{float:'right'}" type="button" class="btn btn-secondary" (click)="deleteProduct(productItem)" >Delete</button>
+                    <button [ngStyle]="{float:'right'}" type="button" class="btn btn-warning downloadBtn" (click)="download(productItem.encryptedPrivateKey)">Download Key</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

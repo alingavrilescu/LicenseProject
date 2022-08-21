@@ -1,0 +1,9 @@
+.header{
+    background-color: rgb(235, 232, 232);
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
