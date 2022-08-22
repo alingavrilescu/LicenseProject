@@ -47,10 +47,11 @@ namespace LicenseProject.Api.Controllers
         [HttpPost]
         public void GenerateLicense([FromBody] LicenseViewModel license)
         {
-            var product = _productRepository.ReturnById(license.ProductId);
             var client = _clientRepository.ReturnById(license.ClientId);
+            var product = _productRepository.ReturnById(license.ProductId);
             var licenseToAdd = new Licenses
             {
+                //Id=Guid.NewGuid(),
                 LicenseType = license.LicenseType,
                 Expiration = license.Expiration,
                 Product = product,

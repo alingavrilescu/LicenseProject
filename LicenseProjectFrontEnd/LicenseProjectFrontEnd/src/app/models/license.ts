@@ -1,8 +1,11 @@
 import { Guid } from 'guid-typescript';
+import { Client } from './client';
+import { Product } from './product';
 export class License{
     id? :Guid;
-    licenseType ="";
+    licenseContent="";
+    licenseType="";
     expiration ="";
-    productId? :Guid;
-    clientId? :Guid;
+    product!:Product;
+    client!:Client;
 }

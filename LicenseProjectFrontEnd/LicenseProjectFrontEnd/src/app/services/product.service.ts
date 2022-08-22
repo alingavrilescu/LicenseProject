@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Guid } from 'guid-typescript';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import { Product } from '../models/product';
@@ -14,6 +15,10 @@ export class ProductService {
 
   public getProduct(): Observable<Product[]>{
     return this.http.get<Product[]>(`${environment.apiUrl}/${this.url}`)
+  }
+
+  public getProductById(id : Guid): Observable<Product>{
+    return this.http.get<Product>(`${environment.apiUrl}/${this.url}/${id}`)
   }
 
   public createProduct(product : Product): Observable<Product[]>{

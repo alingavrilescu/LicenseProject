@@ -5,6 +5,7 @@ import {ProductComponent} from './components/product/product.component';
 import {LicenseComponent} from './components/license/license.component';
 import {HomeComponent} from './components/home/home.component';
 
+
 const routes: Routes = [
   {path:'client', component:ClientComponent},
   {path:'product', component:ProductComponent},

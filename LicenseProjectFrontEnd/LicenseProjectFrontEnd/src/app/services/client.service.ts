@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Guid } from 'guid-typescript';
 import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
 import {Client} from '../models/client';
@@ -14,6 +15,10 @@ export class ClientService {
 
   public getClient(): Observable<Client[]>{
     return this.http.get<Client[]>(`${environment.apiUrl}/${this.url}`)
+  }
+
+  public getClientById(id : Guid): Observable<Client>{
+    return this.http.get<Client>(`${environment.apiUrl}/${this.url}/${id}`)
   }
 
   public createClient(client : Client): Observable<Client[]>{
