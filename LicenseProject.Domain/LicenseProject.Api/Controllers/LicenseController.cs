@@ -51,7 +51,7 @@ namespace LicenseProject.Api.Controllers
             var product = _productRepository.ReturnById(license.ProductId);
             var licenseToAdd = new Licenses
             {
-                //Id=Guid.NewGuid(),
+                Id = Guid.NewGuid(),
                 LicenseType = license.LicenseType,
                 Expiration = license.Expiration,
                 Product = product,

@@ -44,7 +44,8 @@ export class LicenseComponent implements OnInit {
     };
     this.service.createLicense(val).subscribe(res=>{alert(res.toString());});
     this.display = "none";
-    // window.location.reload();
+    window.location.reload();
+    // console.log(this.dateValue);
   }
 
   deleteLicense(item : License){
@@ -93,6 +94,10 @@ export class LicenseComponent implements OnInit {
   }
   onCloseHandled() {
     this.display = "none";
+  }
+
+  dataChanged($event:any){
+    this.dateValue=$event.target.value;
   }
   
   // getProduct(id : Guid)
