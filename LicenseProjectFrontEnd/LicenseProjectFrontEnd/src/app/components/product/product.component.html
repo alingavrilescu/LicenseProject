@@ -46,7 +46,7 @@
                 <td>{{productItem.description}}</td>
                 <td>
                     <button [ngStyle]="{float:'right'}" type="button" class="btn btn-secondary" (click)="deleteProduct(productItem)" >Delete</button>
-                    <button [ngStyle]="{float:'right'}" type="button" class="btn btn-warning downloadBtn" (click)="download(productItem.encryptedPrivateKey)">Download Key</button>
+                    <button [ngStyle]="{float:'right'}" type="button" class="btn btn-warning downloadBtn" (click)="download(productItem.publicKey)">Download Key</button>
                 </td>
             </tr>
         </tbody>
